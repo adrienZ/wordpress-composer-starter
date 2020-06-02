@@ -1,0 +1,19 @@
+{
+    "name": "adrienzaganelli/zogzog",
+    "authors": [
+        {
+            "name": "AdrienZ",
+            "email": "adrienzaganelli@gmail.com"
+        }
+    ],
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": "^5.4",
+        "wpackagist-plugin/advanced-custom-fields": "^5.8"
+    }
+}
