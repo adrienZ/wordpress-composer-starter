@@ -7,7 +7,7 @@ curl -L -o master.zip https://github.com/adrienZ/wordpress-composer-starter/arch
 ```
 
 1. run `composer install`
-2. At the root of your project, rename  the `wp-config.php` into `wp-config.php` and connect to your database.
+2. At the root of your project, copy  the `wp-config-sample.php` file as `wp-config.php` and connect to your database.
 3. In the wp-config file, add theses lines on the top of your file:
 ```php
 $url = "http" . (($_SERVER['SERVER_PORT'] == 443) ? "s" : "") . "://" . $_SERVER['HTTP_HOST'];
