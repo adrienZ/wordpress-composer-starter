@@ -18,7 +18,14 @@
  * @package WordPress
  */
 
-require_once __DIR__ . '/vendor/autoload.php';
+
+/**
+ * Register The Composer Auto Loader
+ *
+ */
+
+require __DIR__ . '/vendor/autoload.php';
+
 use Symfony\Component\Dotenv\Dotenv;
 
 $dotenv = new Dotenv();
@@ -87,6 +94,18 @@ $table_prefix = $_ENV['DB_PREFIX'];
 define( 'WP_DEBUG', $_ENV['DB_DEBUG'] );
 
 
+/**
+ * Customize paths
+ *
+ */
+$url = "http" . (($_SERVER['SERVER_PORT'] == 443) ? "s" : "") . "://" . $_SERVER['HTTP_HOST'];
+$dir = basename(__DIR__);
+
+define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content' );
+define( 'WP_CONTENT_URL', $url . '/' . $dir . '/wp-content' );
+// define( 'WP_PLUGIN_DIR', dirname(__FILE__) . '/wp-content/plugins' );
+// define( 'WP_PLUGIN_URL', $url . '/' . $dir . '/wp-content/plugins' );
+// define( 'UPLOADS', $url . '/' . $dir . '/wp-content/uploads' );
 define( 'WP_HOME', $_ENV['WP_HOME'] );
 define( 'WP_SITEURL', $_ENV['WP_SITEURL'] );
 
