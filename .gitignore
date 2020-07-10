@@ -1,4 +1,6 @@
 wordpress/
-wp-config.php
+.env
 .htaccess
 vendor/
+
+wp-content/plugins/
