@@ -110,6 +110,7 @@ define( 'WP_HOME', $_ENV['WP_HOME'] );
 define( 'WP_SITEURL', $_ENV['WP_SITEURL'] );
 
 
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
@@ -119,3 +120,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+// enable custom theme
+switch_theme('Zigzag');
