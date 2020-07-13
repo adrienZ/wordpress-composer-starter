@@ -3,4 +3,7 @@ wordpress/
 .htaccess
 vendor/
 
-wp-content/plugins/
+wp-content/plugins/*
+!wp-content/plugins/index.php
+wp-content/mu-plugins/*
+!wp-content/mu-plugins/mu-plugins.php
