@@ -91,6 +91,7 @@ $table_prefix = $_ENV['DB_PREFIX'];
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
+
 define( 'WP_DEBUG', $_ENV['DB_DEBUG'] );
 
 
@@ -109,7 +110,9 @@ define( 'WP_CONTENT_URL', $url . '/' . $dir . '/wp-content' );
 define( 'WP_HOME', $_ENV['WP_HOME'] );
 define( 'WP_SITEURL', $_ENV['WP_SITEURL'] );
 
+// Disable Theme and Plugin Editors in WordPress
 
+define( 'DISALLOW_FILE_EDIT', true );
 
 /* That's all, stop editing! Happy publishing. */
 
@@ -122,4 +125,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once ABSPATH . 'wp-settings.php';
 
 // enable custom theme
-switch_theme('Zigzag');
+if (isset($_ENV['WP_THEME'])) {
+	update_option('template', $_ENV['WP_THEME']);
+	update_option('stylesheet', $_ENV['WP_THEME']);
+	update_option('current_theme', $_ENV['WP_THEME']);
+
+	// generate .htaccess when the theme is enabled
+	add_action('after_switch_theme', 'flush_rewrite_rules');
+	add_action('switch_theme', 'flush_rewrite_rules');
+}

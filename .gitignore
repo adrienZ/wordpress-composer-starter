@@ -3,6 +3,8 @@ wordpress/
 .htaccess
 vendor/
 
+wp-content/languages/
+
 wp-content/plugins/*
 !wp-content/plugins/index.php
 wp-content/mu-plugins/*
